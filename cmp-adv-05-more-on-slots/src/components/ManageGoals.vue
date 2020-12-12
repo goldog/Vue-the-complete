@@ -2,12 +2,14 @@
   <div>
     <h2>Manage Goals</h2>
     <input type="text" ref="goal"/>
-    <button @click="setGoal">Set goal</button>    
-    <error-alert v-if="inputIsInvalid">
-      <h2>입력이 이상해요</h2>
-      <p>값을 제대로 입력하세요</p>
-      <button @click="confirmError">확인</button>
-    </error-alert>    
+    <button @click="setGoal">Set goal</button>
+    <teleport to='body'>
+      <error-alert v-if="inputIsInvalid">
+        <h2>입력이 이상해요</h2>
+        <p>값을 제대로 입력하세요</p>
+        <button @click="confirmError">확인</button>
+      </error-alert>    
+    </teleport>
   </div>
 </template>
 
